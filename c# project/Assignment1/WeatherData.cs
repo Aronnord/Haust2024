@@ -8,13 +8,15 @@ public class WeatherData
 
     public double Temperature
     {
-        get {return temperature;}
+        get { return temperature; }
         set
         {
-            if ((scale == 'C' && (value < -60 || value > 60)) ||
-                (scale == 'F' && (value < -76 || value > 140)))
+            bool isUnralistic = (scale == 'C' && (value < -60 || value > 60)) ||
+                                (scale == 'F' && (value < -76 || value > 140));
+
+            if (isUnralistic)
             {
-                Console.WriteLine("The temperature value seems unrealistic.");
+                Console.WriteLine("Reading mistake: The temperature value seems unrealistic.");
             }
             else
             {
@@ -30,7 +32,7 @@ public class WeatherData
         {
             if (value < 0 || value > 100)
             {
-                Console.WriteLine("The humidity must be between 0% and 100%.");
+                Console.WriteLine("Reading mistake: The humidity must be between 0% and 100%.");
             }
             else
             {
