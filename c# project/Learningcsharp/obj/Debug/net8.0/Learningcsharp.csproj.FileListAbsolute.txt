@@ -1,0 +1,14 @@
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/bin/Debug/net8.0/Learningcsharp
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/bin/Debug/net8.0/Learningcsharp.deps.json
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/bin/Debug/net8.0/Learningcsharp.runtimeconfig.json
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/bin/Debug/net8.0/Learningcsharp.dll
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/bin/Debug/net8.0/Learningcsharp.pdb
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/obj/Debug/net8.0/Learningcsharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/obj/Debug/net8.0/Learningcsharp.AssemblyInfoInputs.cache
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/obj/Debug/net8.0/Learningcsharp.AssemblyInfo.cs
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/obj/Debug/net8.0/Learningcsharp.csproj.CoreCompileInputs.cache
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/obj/Debug/net8.0/Learningcsharp.dll
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/obj/Debug/net8.0/refint/Learningcsharp.dll
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/obj/Debug/net8.0/Learningcsharp.pdb
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/obj/Debug/net8.0/Learningcsharp.genruntimeconfig.cache
+/Users/aron/Desktop/h24-fk23/c# project/Learningcsharp/obj/Debug/net8.0/ref/Learningcsharp.dll
