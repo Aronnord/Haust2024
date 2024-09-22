@@ -2,17 +2,17 @@ using System;
 
 public class WeatherData
 {
-    private double temperature;
-    private int humidity;
-    private char scale;
+    private double _temperature;
+    private int _humidity;
+    private char _scale;
 
     public double Temperature
     {
-        get { return temperature; }
+        get { return _temperature; }
         set
         {
-            bool isUnralistic = (scale == 'C' && (value < -60 || value > 60)) ||
-                                (scale == 'F' && (value < -76 || value > 140));
+            bool isUnralistic = (_scale == 'C' && (value < -60 || value > 60)) ||
+                                (_scale == 'F' && (value < -76 || value > 140));
 
             if (isUnralistic)
             {
@@ -20,14 +20,14 @@ public class WeatherData
             }
             else
             {
-                temperature = value;
+                _temperature = value;
             }
         }
     }
 
     public int Humidity
     {
-        get {return humidity;}
+        get {return _humidity;}
         set
         {
             if (value < 0 || value > 100)
@@ -36,19 +36,19 @@ public class WeatherData
             }
             else
             {
-                humidity = value;
+                _humidity = value;
             }
         }
     }
 
     public char Scale
     {
-        get {return scale;}
+        get {return _scale;}
         set
         {
             if (value == 'C' || value == 'F')
             {
-                scale = value;
+                _scale = value;
             }
             else
             {
@@ -67,7 +67,7 @@ public class WeatherData
         Console.Write("Enter the temperature: ");
         if (double.TryParse(Console.ReadLine(), out double temp))
         {
-            temperature = temp;
+            _temperature = temp;
         }
         else
         {
@@ -87,22 +87,22 @@ public class WeatherData
 
     public void Convert()
     {
-        if (scale == 'C')
+        if (_scale == 'C')
         {
-            temperature = (temperature * 9 / 5) + 32;
-            scale = 'F';
+            _temperature = (_temperature * 9 / 5) + 32;
+            _scale = 'F';
         }
-        else if (scale == 'F')
+        else if (_scale == 'F')
         {
-            temperature = (temperature - 32) * 9 / 5;
-            scale = 'C';
+            _temperature = (_temperature - 32) * 9 / 5;
+            _scale = 'C';
         }
     }
 
     public void Display()
     {
-        Console.WriteLine($"Temperature: {temperature}°{scale}");
-        Console.WriteLine($"Humidity: {humidity}%");
+        Console.WriteLine($"Temperature: {_temperature}°{_scale}");
+        Console.WriteLine($"Humidity: {_humidity}%");
     }
 }
 
