@@ -35,18 +35,14 @@
 }
 */
 
-using System;
-
-public class Pprogram
+public class Program
 {
     public static void Main()
     {
         WeatherData weather = new WeatherData();
-        Console.WriteLine(weather);
-
-        weather.SetScaleAndTemperatureFromUserInput();
-        weather.Humidity = 65;
         
-        Console.WriteLine(weather);
+        weather.SetData();
+        weather.Display();
+        weather.Convert();
     }
-}    
+}

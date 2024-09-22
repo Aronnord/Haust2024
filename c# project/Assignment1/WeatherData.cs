@@ -3,28 +3,18 @@ using System;
 public class WeatherData
 {
     private double temperature;
-    private double humidity;
-    private string scale;
-    
-    public WeatherData(double temperature = 0.0, double humidity = 0.0, string scale = "Celsius")
-    {
-        this.Temperature = temperature;
-        this.Humidity = humidity;
-        this.Scale = scale;
-    }
-    
+    private int humidity;
+    private char scale;
+
     public double Temperature
     {
-        get { return temperature; }
+        get {return temperature;}
         set
         {
-            if (Scale == "Celsius" && (value < -60 || value > 60))
+            if ((scale == 'C' && (value < -60 || value > 60)) ||
+                (scale == 'F' && (value < -76 || value > 140)))
             {
-                Console.WriteLine("The temperature value is unrealistic; it must have been a mistake.");
-            }
-            else if (Scale == "Fahrenheit" && (value < -76 || value > 140))
-            {
-                Console.WriteLine("The temperature value is unrealistic; it must have been a mistake.");
+                Console.WriteLine("The temperature value seems unrealistic.");
             }
             else
             {
@@ -32,59 +22,85 @@ public class WeatherData
             }
         }
     }
-    
-    public double Humidity
+
+    public int Humidity
     {
-        get { return humidity; }
-        set { humidity = value; }
-    }
-    
-    public string Scale
-    {
-        get { return scale; }
+        get {return humidity;}
         set
         {
-            if (value != "Celsius" && value != "Fahrenheit")
+            if (value < 0 || value > 100)
             {
-                throw new ArgumentException("Scale must be 'Celsius' or 'Fahrenheit'.");
+                Console.WriteLine("The humidity must be between 0% and 100%.");
             }
-            scale = value;
+            else
+            {
+                humidity = value;
+            }
         }
     }
-    
-    public void SetScaleAndTemperatureFromUserInput()
+
+    public char Scale
     {
-        Console.WriteLine("Choose the temperature scale (Celsius/Fahrenheit): ");
-        string inputScale = Console.ReadLine()?.Trim();
-        
-        if (inputScale.Equals("Fahrenheit", StringComparison.OrdinalIgnoreCase))
+        get {return scale;}
+        set
         {
-            Scale = "Fahrenheit";
+            if (value == 'C' || value == 'F')
+            {
+                scale = value;
+            }
+            else
+            {
+                Console.WriteLine("Invalid scale: Use 'C' for Celsius or 'F' for Fahrenheit.");
+            }
+        }
+    }
+
+    public void SetData()
+    {
+        Console.WriteLine("Enter the temperature value: ('C' for Celsius or 'F' for Fahrenheit.)");
+        char inputScale = char.ToUpper(Console.ReadKey().KeyChar);
+        Console.WriteLine();
+        Scale = inputScale;
+        
+        Console.Write("Enter the temperature: ");
+        if (double.TryParse(Console.ReadLine(), out double temp))
+        {
+            temperature = temp;
         }
         else
         {
-            Scale = "Celsius";
-            if (!inputScale.Equals("Celsius", StringComparison.OrdinalIgnoreCase))
-            {
-                Console.WriteLine("Invalid scale input. Defaulting to Celsius.");
-            }
+            Console.WriteLine("Invalid temperature value. Please enter a number");
         }
         
-        Console.Write($"Enter the temperature in {Scale}: ");
-        string inputTemp = Console.ReadLine();
-        
-        if (double.TryParse(inputTemp, out double temp))
+        Console.Write("Enter the humidity 0 to 100: ");
+        if (int.TryParse(Console.ReadLine(), out int humid))
         {
-            Temperature = temp; // This will trigger the validation inside the setter
+            Humidity = humid;
         }
         else
         {
-            Console.WriteLine("Invalid input. Please enter a valid number.");
+            Console.WriteLine("Invalid humidity value. Please enter a number");
         }
     }
-   
-    public override string ToString()
+
+    public void Convert()
     {
-        return $"Temperature: {Temperature}° {Scale}, Humidity: {Humidity}%";
+        if (scale == 'C')
+        {
+            temperature = (temperature * 9 / 5) + 32;
+            scale = 'F';
+        }
+        else if (scale == 'F')
+        {
+            temperature = (temperature - 32) * 9 / 5;
+            scale = 'C';
+        }
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"Temperature: {temperature}°{scale}");
+        Console.WriteLine($"Humidity: {humidity}%");
     }
 }
+

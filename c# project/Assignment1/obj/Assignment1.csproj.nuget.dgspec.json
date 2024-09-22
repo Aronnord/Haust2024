@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/aron/Desktop/h24-fk23/c# project/Assignment1/Assignment1.csproj": {}
+    "/Users/aron/Desktop/h24-fk23/Haust2024/c# project/Assignment1/Assignment1.csproj": {}
   },
   "projects": {
-    "/Users/aron/Desktop/h24-fk23/c# project/Assignment1/Assignment1.csproj": {
+    "/Users/aron/Desktop/h24-fk23/Haust2024/c# project/Assignment1/Assignment1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/aron/Desktop/h24-fk23/c# project/Assignment1/Assignment1.csproj",
+        "projectUniqueName": "/Users/aron/Desktop/h24-fk23/Haust2024/c# project/Assignment1/Assignment1.csproj",
         "projectName": "Assignment1",
-        "projectPath": "/Users/aron/Desktop/h24-fk23/c# project/Assignment1/Assignment1.csproj",
+        "projectPath": "/Users/aron/Desktop/h24-fk23/Haust2024/c# project/Assignment1/Assignment1.csproj",
         "packagesPath": "/Users/aron/.nuget/packages/",
-        "outputPath": "/Users/aron/Desktop/h24-fk23/c# project/Assignment1/obj/",
+        "outputPath": "/Users/aron/Desktop/h24-fk23/Haust2024/c# project/Assignment1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/aron/.nuget/NuGet/NuGet.Config"
